@@ -11,7 +11,7 @@ export default $config({
 	async run() {
 		const hello = new sst.aws.Function("Hello", {
 			architecture: "arm64",
-			handler: "dist/src/framework/functions/hello.handler",
+			handler: "src/framework/functions/hello.handler",
 			memory: "1536 MB",
 			runtime: "nodejs20.x",
 			timeout: "15 seconds",
@@ -20,7 +20,16 @@ export default $config({
 
 		const test = new sst.aws.Function("test", {
 			architecture: "arm64",
-			handler: "dist/src/framework/functions/test.handler",
+			handler: "src/framework/functions/test.handler",
+			memory: "1536 MB",
+			runtime: "nodejs20.x",
+			timeout: "15 seconds",
+			url: true,
+		});
+
+		const getName = new sst.aws.Function("GetName", {
+			architecture: "arm64",
+			handler: "src/framework/functions/get-name.handler",
 			memory: "1536 MB",
 			runtime: "nodejs20.x",
 			timeout: "15 seconds",
@@ -28,6 +37,7 @@ export default $config({
 		});
 
 		return {
+			getName: getName.url,
 			hello: hello.url,
 			test: test.url,
 		};

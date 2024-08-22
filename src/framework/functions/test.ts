@@ -1,10 +1,8 @@
 import { APIGatewayEvent, APIGatewayProxyResult } from "aws-lambda";
+import { ok } from "../utils/http-responses";
 
 export const handler = async (
 	event: APIGatewayEvent,
 ): Promise<APIGatewayProxyResult> => {
-	return {
-		statusCode: 200,
-		body: JSON.stringify({ test: "test" }),
-	};
+	return ok({ test: "test" });
 };

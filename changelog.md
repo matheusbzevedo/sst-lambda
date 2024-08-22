@@ -1,3 +1,9 @@
+### 0.2.0
+
+- FEAT: add zod
+- chore: remove deploy scripts
+- chore: remove dependencies script to build layer
+
 ### 0.1.2
 
 - CHORE: add layer default

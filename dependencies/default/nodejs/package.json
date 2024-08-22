@@ -1,9 +1,0 @@
-{
-	"license": "MIT",
-	"dependencies": {
-		"@middy/core": "^5.4.6",
-		"@middy/http-json-body-parser": "^5.4.6",
-		"sst": "3.0.66",
-		"yup": "^1.4.0"
-	}
-}

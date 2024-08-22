@@ -15,5 +15,5 @@
 		"strictNullChecks": false,
 		"target": "ES2022"
 	},
-	"exclude": ["**/*.config.ts", ".sst"]
+	"exclude": ["**/*.config.ts", ".sst", "spec"]
 }

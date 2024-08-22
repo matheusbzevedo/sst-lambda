@@ -1,10 +1,10 @@
 import middy from "@middy/core";
 import { APIGatewayEvent, APIGatewayProxyResult } from "aws-lambda";
-import { AnySchema, ObjectSchema } from "yup";
+import { ZodObject, ZodSchema } from "zod";
 
 export const schemaValidator = (schema: {
-	body?: AnySchema<any>;
-	queryStringParameters?: ObjectSchema<any>;
+	body?: ZodSchema<any>;
+	queryStringParameters?: ZodObject<any>;
 }): middy.MiddlewareObj<APIGatewayEvent, APIGatewayProxyResult> => {
 	const before: middy.MiddlewareFn<
 		APIGatewayEvent,
@@ -13,10 +13,10 @@ export const schemaValidator = (schema: {
 		try {
 			const { body, queryStringParameters } = request.event;
 
-			if (schema.body) schema.body.validateSync(body);
+			if (schema.body) schema.body.parse(body);
 
 			if (schema.queryStringParameters)
-				schema.queryStringParameters.validateSync(queryStringParameters ?? {});
+				schema.queryStringParameters.parse(queryStringParameters ?? {});
 
 			return Promise.resolve();
 		} catch (e: any) {
