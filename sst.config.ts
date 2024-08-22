@@ -15,7 +15,12 @@ export default $config({
 			memory: "1536 MB",
 			runtime: "nodejs20.x",
 			timeout: "15 seconds",
-			url: true,
+			url: {
+				cors: {
+					allowMethods: ["POST"],
+					allowOrigins: ["*"],
+				},
+			},
 		});
 
 		const test = new sst.aws.Function("test", {
@@ -24,7 +29,12 @@ export default $config({
 			memory: "1536 MB",
 			runtime: "nodejs20.x",
 			timeout: "15 seconds",
-			url: true,
+			url: {
+				cors: {
+					allowMethods: ["GET"],
+					allowOrigins: ["*"],
+				},
+			},
 		});
 
 		const getName = new sst.aws.Function("GetName", {
@@ -33,7 +43,12 @@ export default $config({
 			memory: "1536 MB",
 			runtime: "nodejs20.x",
 			timeout: "15 seconds",
-			url: true,
+			url: {
+				cors: {
+					allowMethods: ["POST"],
+					allowOrigins: ["*"],
+				},
+			},
 		});
 
 		return {
