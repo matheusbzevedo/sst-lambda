@@ -1,0 +1,48 @@
+{
+	"name": "sst-test",
+	"version": "0.1.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"prepare": "node .husky/install.mjs"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"@middy/core": "^5.4.6",
+		"@middy/http-json-body-parser": "^5.4.6",
+		"sst": "3.0.66",
+		"yup": "^1.4.0"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^19.4.0",
+		"@commitlint/config-conventional": "^19.2.2",
+		"@eslint/eslintrc": "^3.1.0",
+		"@eslint/js": "^9.9.0",
+		"@types/aws-lambda": "8.10.143",
+		"@types/node": "^22.5.0",
+		"@typescript-eslint/eslint-plugin": "^8.2.0",
+		"@typescript-eslint/parser": "^8.2.0",
+		"eslint": "^9.9.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-prettier": "^5.2.1",
+		"eslint-plugin-unused-imports": "^4.1.3",
+		"globals": "^15.9.0",
+		"husky": "^9.1.5",
+		"lint-staged": "^15.2.9",
+		"prettier": "^3.3.3",
+		"typescript": "^5.5.4"
+	},
+	"volta": {
+		"node": "20.16.0",
+		"npm": "10.8.1"
+	},
+	"lint-staged": {
+		"*.ts": [
+			"npx eslint --fix",
+			"prettier --write \"src/**/*.ts\""
+		]
+	}
+}
