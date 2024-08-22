@@ -5,8 +5,6 @@ import { middyfy } from "../utils/middyfy";
 
 export class Hello {
 	async handler(event: APIGatewayEvent): Promise<APIGatewayProxyResult> {
-		console.log(event);
-
 		return ok({ message: "hello world!" });
 	}
 }

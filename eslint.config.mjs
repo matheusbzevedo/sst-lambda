@@ -40,6 +40,7 @@ export default [{
         "no-constant-condition": ["error", {
             checkLoops: false,
         }],
+				"no-console": "error",
 
         "no-empty-function": "off",
 
