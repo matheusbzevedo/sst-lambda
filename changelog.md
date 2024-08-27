@@ -1,3 +1,8 @@
+### 0.3.0
+
+- FEAT: add vitest
+- feat: add unit test for handlers and others files
+
 ### 0.2.0
 
 - FEAT: add zod

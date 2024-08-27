@@ -1,52 +1,57 @@
 {
-	"name": "sst-test",
-	"version": "0.2.0",
-	"main": "index.js",
-	"scripts": {
-		"build": "npx tsc",
-		"lint": "npx eslint src spec",
-		"prepare": "node .husky/install.mjs",
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"description": "",
-	"dependencies": {
-		"@middy/core": "^5.4.6",
-		"@middy/http-json-body-parser": "^5.4.6",
-		"sst": "3.0.66",
-		"zod": "^3.23.8"
-	},
-	"devDependencies": {
-		"@commitlint/cli": "^19.4.0",
-		"@commitlint/config-conventional": "^19.2.2",
-		"@eslint/eslintrc": "^3.1.0",
-		"@eslint/js": "^9.9.0",
-		"@types/aws-lambda": "8.10.143",
-		"@types/node": "^22.5.0",
-		"@typescript-eslint/eslint-plugin": "^8.2.0",
-		"@typescript-eslint/parser": "^8.2.0",
-		"eslint": "^9.9.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-prettier": "^5.2.1",
-		"eslint-plugin-unused-imports": "^4.1.3",
-		"globals": "^15.9.0",
-		"husky": "^9.1.5",
-		"lint-staged": "^15.2.9",
-		"prettier": "^3.3.3",
-		"tslint": "^6.1.3",
-		"tslint-config-prettier": "^1.18.0",
-		"typescript": "^5.5.4"
-	},
-	"volta": {
-		"node": "20.17.0",
-		"npm": "10.8.2"
-	},
-	"lint-staged": {
-		"*.ts": [
-			"npm run lint",
-			"prettier --write \"src/**/*.ts\""
-		]
-	}
+  "name": "sst-test",
+  "version": "0.3.0",
+  "scripts": {
+    "build": "npx tsc",
+    "lint": "npx eslint src spec",
+    "prepare": "node .husky/install.mjs",
+    "test:watch": "vitest --coverage --watch",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "Matheus Azevedo <matheusbzevedo@gmail.com>",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@middy/core": "^5.4.6",
+    "@middy/http-json-body-parser": "^5.4.6",
+    "sst": "3.0.66",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.9.0",
+    "@types/aws-lambda": "8.10.143",
+    "@types/node": "^22.5.0",
+    "@typescript-eslint/eslint-plugin": "^8.2.0",
+    "@typescript-eslint/parser": "^8.2.0",
+    "@vitest/coverage-istanbul": "^2.0.5",
+    "@vitest/ui": "^2.0.5",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-unused-imports": "^4.1.3",
+    "globals": "^15.9.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9",
+    "prettier": "^3.3.3",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2",
+    "vite-tsconfig-paths": "^5.0.1",
+    "vitest": "^2.0.5"
+  },
+  "volta": {
+    "node": "20.17.0",
+    "npm": "10.8.2"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run lint",
+      "prettier --write \"src/**/*.ts\""
+    ]
+  }
 }

@@ -1,10 +1,10 @@
 import { APIGatewayProxyResult } from 'aws-lambda';
 import { describe, expect, it } from 'vitest';
-import { Test } from './../../../src/framework/functions/test'; // Substitua com o caminho correto
-import { eventMock } from './../../mock/event';
+import { eventMock } from '../../mock/event';
+import { Hello } from './../../../src/framework/functions/hello';
 
-describe('Test handler suit test', () => {
-  const getInstance = () => new Test();
+describe('Hello handler suit test', () => {
+  const getInstance = () => new Hello();
 
   it('Should return a successful response', async () => {
     const mockEvent = eventMock({});
@@ -13,6 +13,6 @@ describe('Test handler suit test', () => {
       await getInstance().handler(mockEvent);
 
     expect(result.statusCode).toEqual(200);
-    expect(result.body).toEqual(JSON.stringify({ test: 'test' }));
+    expect(result.body).toEqual(JSON.stringify({ message: 'Hello World!' }));
   });
 });

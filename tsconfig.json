@@ -1,19 +1,21 @@
 {
-	"compilerOptions": {
-		"baseUrl": ".",
-		"emitDecoratorMetadata": true,
-		"esModuleInterop": true,
-		"experimentalDecorators": true,
-		"lib": ["ES2022"],
-		"module": "ES2022",
-		"moduleResolution": "Node",
-		"noImplicitAny": false,
-		"outDir": "dist",
-		"rootDir": "./",
-		"sourceMap": true,
-		"strict": true,
-		"strictNullChecks": false,
-		"target": "ES2022"
-	},
-	"exclude": ["**/*.config.ts", ".sst", "spec"]
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "lib": ["ES2022"],
+    "module": "ES2022",
+    "moduleResolution": "Node",
+    "noImplicitAny": false,
+    "rootDir": "./",
+    "sourceMap": true,
+    "strict": true,
+    "strictNullChecks": false,
+    "target": "ES2022",
+    "types": ["vitest/globals"],
+    "useUnknownInCatchVariables": false
+  },
+  "exclude": ["**/*.config.ts", ".sst", "spec"]
 }
